@@ -40,7 +40,6 @@ ul {
 img{
     display: block;
     max-width: 100%;
-    height: auto;
 }
 
 .conteiner {
@@ -62,8 +61,9 @@ img{
 
 /* Хедер */
 .header-section{
-    border-bottom: 1px solid #E7E9FC;
+    border-bottom: 1px solid var(--accent-color);
 }
+
 .header-conteiner{
     display: flex;
     justify-content: space-between;
@@ -198,7 +198,7 @@ img{
 
 .section-advantages__item{
     width: 264px;
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--accent-color);
 }
 
 /*секция projects */
@@ -265,14 +265,19 @@ img{
     flex-wrap: wrap;
 }
 .portfolio-item{
-    flex-basis: calc(100% / 3 -24px);
+    flex-basis: calc(100% / 3 - 24px);
     margin: var(--card-set-gap);
     
 }
-
+.portfolio-item:nth-child(3n + 1){
+    margin-left: 0;
+}
+.portfolio-item:nth-child(-n + 3) {
+    margin-top: 0;
+}
 
 .card-content{
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--accent-color);
     border-top: none;
     padding: 32px 16px;
 } 
