@@ -67,7 +67,6 @@ img{
 .header-conteiner{
     display: flex;
     justify-content: space-between;
-    padding: 24px 0;
 }
 .header-nav{
     display: flex;
@@ -83,6 +82,7 @@ img{
     line-height: 1.33;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    padding: 24px 0;
 }
 .logo-web {
     color: var(--primary-brand);
@@ -91,13 +91,12 @@ img{
 .nav-list{
     display: flex;
 }
-.nav-item, .contact-item{
+.nav-item:not(:last-child), .contact-item{
     margin-right: 40px;
 }
-.nav-item:last-child{
-    margin-right: 0px;
-}
 .nav-link{
+    display: block;
+    padding: 24px 0;
     color: var(--title-text-color);
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -114,6 +113,8 @@ img{
 }
 
 .contact-link {
+    display: block;
+    padding: 24px 0;
     font-style: normal;
     letter-spacing: 0.02em;
 }
@@ -126,17 +127,19 @@ img{
 .section-hero {
     background-color: var(--title-text-color);
     padding: 188px 0;
-    text-align: center;
+    
 
 }
 
 .hero-title{
+    width: 496px;
     color: var(--white-color);
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     text-align: center;
     margin-bottom: 48px;
+    margin: 0 auto;
 }
 
 
@@ -146,8 +149,6 @@ img{
     cursor: pointer;
     font-weight: 500;
     line-height: 1.5;
-        /* identical to box height, or 150% */
-    /* font-size: унаследовать или 16Px */
     letter-spacing: 0.04em;
     padding: 16px 32px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -198,7 +199,6 @@ img{
 
 .section-advantages__item{
     width: 264px;
-    border: 1px solid var(--accent-color);
 }
 
 /*секция projects */
@@ -209,21 +209,21 @@ img{
     background-color: var(--light-mode-backgrounds);
 }
 
-.section-team__cards{
+
+
+.team-item{
     width: 264px;
     background-color: var(--white-color);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
-    padding-bottom: 32px;
-
 }
-.section-team__cards img{
-    margin-bottom: 32px;
-}
-
-.section-team__title, .section-team__text {
+.team-card-content{
+    overflow: hidden;
     text-align: center;
+    padding: 32px 16px;
 }
+
+
 
 /* портфолио секция */
 .section-portfolio{
@@ -256,7 +256,7 @@ img{
 .portfolio-button:hover, .portfolio-button:focus {
     background-color: var(--pressed-state);
     color: var(--white-color);
-    border: none;
+    border-color:var(--pressed-state);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -265,7 +265,7 @@ img{
     flex-wrap: wrap;
 }
 .portfolio-item{
-    flex-basis: calc(100% / 3 - 24px);
+    flex-basis: calc((100% - 48px) / 3 );
     margin: var(--card-set-gap);
     
 }
